@@ -1,0 +1,53 @@
+what is getters and setters in Ruby, with example and comment
+
+In Ruby, getters and setters are methods that allow you to access and modify the value of an object's instance variable.
+
+A getter method is used to retrieve the value of an instance variable. It is usually named after the instance variable with a # prefix, like #name or #age.
+
+class Person
+  def initialize(name)
+    @name = name
+  end
+
+  def name
+    @name
+  end
+end
+
+p = Person.new("John")
+puts p.name # => "John"
+
+A setter method is used to change the value of an instance variable. It is usually named after the instance variable with a # prefix and an = suffix, like #name= or #age=.
+
+class Person
+  def initialize(name)
+    @name = name
+  end
+
+  def name
+    @name
+  end
+
+  def name=(new_name)
+    @name = new_name
+  end
+end
+
+p = Person.new("John")
+p.name = "Jane"
+puts p.name # => "Jane"
+
+Alternatively, Ruby's attr_accessor, attr_reader, attr_writer can be used as a shorthand for defining getters and setters.
+
+class Person
+  attr_accessor :name
+  def initialize(name)
+    @name = name
+  end
+end
+
+p = Person.new("John")
+p.name = "Jane"
+puts p.name # => "Jane"
+
+Note that in general, it's not recommended to use getters and setters, instead of that it's recommended to use the "Principle of least privilege", this means that class should only expose methods to the object that is necessary for other objects to do their job.
