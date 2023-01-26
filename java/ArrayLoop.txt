@@ -1,0 +1,23 @@
+Java provides several types of collection classes in the java.util package, including:
+
+    ArrayList: An array-based implementation of the List interface that dynamically resizes as elements are added or removed.
+
+    LinkedList: A linked-list implementation of the List interface that allows for efficient insertion and removal of elements at the beginning and end of the list.
+
+    HashSet: A set implementation that uses a hash table for storage and does not allow duplicate elements.
+
+    TreeSet: A set implementation that uses a balanced tree for storage and does not allow duplicate elements. It sorts the elements in natural order.
+
+    HashMap: A map implementation that uses a hash table for storage and allows one key-value pair per key.
+
+    TreeMap: A map implementation that uses a balanced tree for storage and allows one key-value pair per key. It sorts the keys in natural order.
+
+    Vector: A dynamic array implementation of the List interface that is similar to ArrayList, but is synchronized.
+
+    Stack: A last-in, first-out (LIFO) data structure implemented as an extension of the Vector class.
+
+    Queue: A first-in, first-out (FIFO) data structure implemented by several classes such as LinkedList, PriorityQueue, and ArrayDeque.
+
+    Deque: A double-ended queue data structure implemented by several classes such as LinkedList, ArrayDeque.
+
+These are the commonly used collection classes, but there are many more which are specialized for different use cases.

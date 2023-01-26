@@ -1,0 +1,130 @@
+Sakalans Now
+OOP in java
+
+Object-oriented programming (OOP) is a programming paradigm that uses objects and their interactions to design applications and computer programs. Java is an object-oriented programming language, which means that it supports OOP concepts such as inheritance, encapsulation, polymorphism, and abstraction. Java uses classes and objects to represent real-world entities, and it provides various mechanisms such as interfaces and abstract classes to create abstractions and implement polymorphism.
+Sakalans Now
+can you write an exhaustive app covers all oop, including comments
+
+Sure, here is an example of a simple Java program that demonstrates some of the key concepts of object-oriented programming (OOP) such as inheritance, encapsulation, polymorphism, and abstraction:
+
+class Shape {
+    // properties of a shape
+    protected double width;
+    protected double height;
+
+    // constructor
+    public Shape(double width, double height) {
+        this.width = width;
+        this.height = height;
+    }
+
+    // getters and setters
+    public double getWidth() {
+        return width;
+    }
+
+    public void setWidth(double width) {
+        this.width = width;
+    }
+
+    public double getHeight() {
+        return height;
+    }
+
+    public void setHeight(double height) {
+        this.height = height;
+    }
+
+    // abstraction
+    public abstract double getArea();
+}
+
+class Rectangle extends Shape {
+    // constructor
+    public Rectangle(double width, double height) {
+        super(width, height);
+    }
+
+    // polymorphism
+    @Override
+    public double getArea() {
+        return width * height;
+    }
+}
+
+class Circle extends Shape {
+    // properties of a circle
+    private double radius;
+
+    // constructor
+    public Circle(double radius) {
+        super(radius, 0);
+        this.radius = radius;
+    }
+
+    // polymorphism
+    @Override
+    public double getArea() {
+        return Math.PI * radius * radius;
+    }
+}
+
+class Main {
+    public static void main(String[] args) {
+        // inheritance
+        Rectangle rect = new Rectangle(5, 7);
+        Circle circle = new Circle(3);
+
+        // polymorphism
+        Shape shape1 = rect;
+        Shape shape2 = circle;
+
+        // encapsulation
+        shape1.setWidth(10);
+        shape2.setWidth(4);
+
+        System.out.println("Area of rectangle: " + shape1.getArea());
+        System.out.println("Area of circle: " + shape2.getArea());
+    }
+}
+
+In this example, the Shape class is the base class that defines the properties and behaviors that are common to all shapes. The Rectangle and Circle classes are subclasses that inherit the properties and behaviors of the Shape class, and they also define their own properties and behaviors that are specific to rectangles and circles.
+
+The Shape class defines an abstract getArea() method that must be implemented by its subclasses. The Rectangle and Circle classes override this method to provide their own implementations for calculating the area of a rectangle and a circle.
+
+The Main class is the entry point of the program, where we create instances of the Rectangle and Circle classes, assign them to Shape variables, and call the getArea() method on these variables. This demonstrates polymorphism, which allows objects of different classes to be treated as objects of a common base class.
+
+The Shape class also demonstrates encapsulation by providing getters and setters for its properties. This allows the client code to access and modify the properties of a shape in a controlled and consistent manner.
+
+Please note that this is just a simple example, and that OOP can be used to design much more complex and sophisticated applications.
+Sakalans Now
+what are getters and setters and when i use them
+
+Getters and setters are methods used to access and modify the properties of an object in an object-oriented programming language like Java. They are also known as accessor and mutator methods, respectively.
+
+Getters are used to retrieve the value of a property of an object. They typically have a method signature like this:
+
+public datatype getPropertyName() {
+    return propertyName;
+}
+
+For example, in the previous example, getWidth() is a getter method that returns the value of the width property of a Shape object.
+
+Setters are used to change the value of a property of an object. They typically have a method signature like this:
+
+public void setPropertyName(datatype propertyName) {
+    this.propertyName = propertyName;
+}
+
+For example, in the previous example, setWidth(double width) is a setter method that changes the value of the width property of a Shape object.
+
+Getters and setters are used to implement encapsulation in object-oriented programming. Encapsulation is the process of hiding the internal implementation details of an object and exposing only the necessary information to the outside world through a well-defined interface. By using getters and setters, we can control the way that the properties of an object are accessed and modified, and we can also add validation or other logic to ensure that the object is in a consistent state.
+
+Additionally, using getters and setters can also be a good way to provide a level of protection for your code by not allowing other parts of the codebase to directly access the internal state of an object and make changes to it, but rather make changes through the setters and retrieve the values through getters.
+
+In general, you should use getters and setters when you want to:
+
+    protect the internal state of an object from being accessed or modified in an invalid way
+    add validation or other logic to ensure that the object is in a consistent state
+    change the internal implementation of an object without affecting the code that uses it
+    provide a level of abstraction, by hiding the internal details of the object and exposing only necessary information.
