@@ -1,0 +1,54 @@
+anitize functions
+
+In PHP, "sanitize" functions are used to clean and filter user input to prevent security issues such as SQL injection, cross-site scripting (XSS), and others. Sanitizing user input helps ensure that your application is secure and protected from malicious attacks.
+
+Here are some common sanitize functions in PHP:
+
+    "strip_tags": This function removes HTML and PHP tags from a string, leaving only plain text.
+
+    "htmlspecialchars": This function converts special characters to HTML entities, preventing them from being interpreted as HTML code.
+
+    "intval": This function converts a value to an integer, discarding anything that is not a digit.
+
+    "filter_var": This function provides a flexible way to sanitize and validate data. It supports several filters, including "FILTER_SANITIZE_EMAIL" to sanitize an email address, "FILTER_SANITIZE_URL" to sanitize a URL, and others.
+
+    "mysqli_real_escape_string": This function is used to escape special characters in a string for use in a SQL query, preventing SQL injection attacks.
+
+It's important to note that sanitizing user input is only one aspect of securing your application. It's also important to validate user input, use prepared statements when working with databases, and follow other best practices for security.
+Nasr Khalil
+validate user input, use prepared statements
+
+In PHP, validating user input and using prepared statements are two important practices for ensuring the security and reliability of your application.
+
+    Validate user input: Before accepting and processing user input, it's important to validate it to ensure that it meets your expectations. This can involve checking for required fields, verifying data formats (e.g. email addresses, URLs), and ensuring that values are within acceptable ranges. PHP provides several functions for validating user input, such as "filter_var" for validating different types of data, "preg_match" for performing regular expression matching, and "is_numeric" for checking if a value is a number.
+
+    Use prepared statements: When working with databases, it's important to use prepared statements to prevent SQL injection attacks. Prepared statements allow you to separate the data from the SQL query, making it much harder for attackers to inject malicious code. The PHP "mysqli" extension provides a convenient way to work with prepared statements. To create a prepared statement, you first call the "mysqli_prepare" function to create a statement object, then bind your parameters to the statement using "mysqli_stmt_bind_param". Finally, you execute the statement using "mysqli_stmt_execute".
+
+Here is an example of using a prepared statement in PHP:
+
+bash
+
+$conn = mysqli_connect("localhost", "user", "password", "database");
+$query = "SELECT * FROM users WHERE username = ?";
+$stmt = mysqli_prepare($conn, $query);
+mysqli_stmt_bind_param($stmt, "s", $username);
+mysqli_stmt_execute($stmt);
+$result = mysqli_stmt_get_result($stmt);
+
+In this example, the $query variable contains a SQL query that selects data from the "users" table where the "username" column equals a given value. The mysqli_prepare function creates a statement object and the mysqli_stmt_bind_param function binds a parameter (in this case, the $username variable) to the statement. The statement is executed using mysqli_stmt_execute and the result can be retrieved using mysqli_stmt_get_result.
+Nasr Khalil
+change kubuntu background
+
+To change the background on Kubuntu, follow these steps:
+
+    Right-click on the desktop and select "Desktop Settings".
+
+    In the Desktop Settings window, go to the "Background" tab.
+
+    From here, you can choose one of the predefined background images or select a custom image. To choose a custom image, click the "Add Image" button and select the image you want to use.
+
+    To change the background color, you can use the color picker in the "Color" section.
+
+    When you're finished making changes, click "Apply" and then "Close".
+
+Your new background should now be applied and visible on your desktop.
